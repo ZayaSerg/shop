@@ -1,0 +1,22 @@
+.header__main
+  .container
+    .header-content
+      .header__logo.logo
+        img(src="static/img/general/logo.png" alt="Логотип").logo__img
+      .header__phones
+        .header__item
+          a(href="tel:380678737677").header__phone 38 (067) 87-37-677
+          a.header__link Заказать звонок
+        .header__item
+          a(href="tel:0800707707").header__phone 0 (800) 707-707
+          span.header__description Звонок бесплатный
+      .header__address.header-address
+        +icon('location','header-address__icon')
+        span.header-address__text Киев, ул.Шевченка 73
+      .header__shop
+        .header-goods
+          span.header-goods__price 0 &#x20b4
+          span.header-goods__count 0 товаров
+        .header-basket
+          +icon('basket','header-basket__icon')
+          span.header-basket__text Корзина

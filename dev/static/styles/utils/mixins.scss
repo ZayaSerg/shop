@@ -1,3 +1,8 @@
+@mixin size($a, $b: $a) {
+  width: $a;
+  height: $b;
+}
+
 // absolute-center()
 // 	position absolute
 // 	top 50%
