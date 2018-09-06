@@ -1,4 +1,5 @@
 .header {
+  border-bottom: 1px solid $athens-gray;
   &-content {
     display: flex;
     align-items: center;
@@ -108,6 +109,7 @@
     align-items: center;
     height: 40px;
     padding: 0 20px;
+    cursor: pointer;
     border-radius: 20px;
     & > * {
       margin-right: 15px;
@@ -125,7 +127,9 @@
     }
   }
   &__menu {
-    background-color: $athens-gray;
-    padding: 15px;
+    // background-color: $athens-gray;
+  }
+  &__search {
+    margin-left: auto;
   }
 }
