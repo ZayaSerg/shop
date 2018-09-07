@@ -1,8 +1,15 @@
 .header__menu
   .container
     .header-content
-      .nav.header__main-nav.main-nav
+      //- .nav.header__main-nav.main-nav
       include ../main-nav/main-nav
       .header__search.search
         +icon('search','search__icon')
+        .search__body
+           form.search__form
+             .search__input-wrapper
+               input(placeholder="Я хочу купить...").search__input
+               .search__clear
+                 +icon('close','search__clear-icon')
+             input(type="submit" value="Найти").search__btn
         
