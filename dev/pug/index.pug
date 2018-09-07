@@ -1,7 +1,8 @@
-extends ../layout/main
+extends template/main
 
 block variables
 	- var title = 'Главная страница'
 	- var pageClass = 'index-page'
 
 block content
+	include pages/index/banner

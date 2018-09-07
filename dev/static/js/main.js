@@ -1,7 +1,5 @@
 $(document).ready(function() {
-  // alert("JQuery working");
   svg4everybody({});
-  // console.log(this);
 
   let openSearchForm = () => {
     $(document).on("click", ".search__icon", function() {
@@ -17,7 +15,21 @@ $(document).ready(function() {
     });
   };
 
+  let bannerSlider = () => {
+    $(".js-banner").slick({
+      slidesToShow: 1,
+      slideToScroll: 1,
+      prevArrow: ".banner__navigation--prev",
+      nextArrow: ".banner__navigation--next",
+      dots: true,
+      customPaging: function(slider, i) {
+        return '<a class="banner__dot"></a>';
+      },
+      appendDots: ".banner__dots"
+    });
+  };
+
   openSearchForm();
   clearSearchForm();
-  // GetStarted();
+  bannerSlider();
 });

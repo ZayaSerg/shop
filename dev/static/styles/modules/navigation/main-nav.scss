@@ -16,6 +16,7 @@
         }
         &-dropdown {
           display: flex;
+          // z-index: 5;
         }
       }
     }
@@ -30,6 +31,8 @@
     line-height: 1.88;
   }
   &-dropdown {
+    // Why its dont workig
+    z-index: 5 !important;
     position: absolute;
     left: 0;
     top: 100%;

@@ -1,0 +1,100 @@
+.banner {
+  background-image: linear-gradient(255deg, #ffb800, #ff6d00);
+  height: 300px;
+  padding: 0 90px;
+  position: relative;
+  border-radius: 4px;
+  &__navigation {
+    @include size(50px);
+    background-color: rgba($white, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    transition: all linear 0.3s;
+    &.banner__navigation {
+      &--prev {
+        left: 30px;
+      }
+      &--next {
+        right: 30px;
+      }
+    }
+    &:hover {
+      background-color: rgba($white, 0.5);
+      .banner__navigation-icon {
+        fill rgba($black, 0.5)
+      }
+    }
+    &-icon {
+      width: 10px;
+      height: 17px;
+      fill: rgba($black, 0.5);
+      transition: all linear 0.3s;
+    }
+  }
+  &__item {
+    outline: none;
+  }
+  &__content {
+    display: flex;
+    padding: 30px 0;
+  }
+  &__body {
+    color: $white;
+    flex: 1;
+  }
+  &__title {
+    display: block;
+    font-size: 50px;
+    line-height: 1;
+    margin-bottom: 15px;
+  }
+  &__descr {
+    font-size: 18px;
+    line-height: 1.67;
+    margin-bottom: 40px;
+  }
+  &__img {
+    max-width: 100%;
+    max-height: 240px;
+    &-wrapper {
+      flex: 0 0 40%;
+      text-align: center;
+      width: 40%;
+    }
+  }
+  &__dot {
+    @include size(8px);
+    border-radius: 50%;
+    background-color: rgba(38, 38, 38, 0.3);
+    display: block;
+    cursor: pointer;
+  }
+  &__dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.slick-active {
+          .banner__dot {
+            background-color: $white;
+          }
+        }
+      }
+    }
+  }
+}
