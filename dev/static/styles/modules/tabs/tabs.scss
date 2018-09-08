@@ -1,0 +1,18 @@
+@import "hits";
+
+.tab {
+  display: none;
+  &.tab {
+    &--active {
+      display: block;
+    }
+  }
+}
+
+.tabs {
+  &-navigation {
+    &__item {
+      cursor: pointer;
+    }
+  }
+}
