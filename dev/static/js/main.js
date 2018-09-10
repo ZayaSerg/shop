@@ -40,6 +40,14 @@ $(document).ready(function() {
         .addClass("tab--active")
         .siblings()
         .removeClass("tab--active");
+      if (".tabs__body ." + tabName + " .js-products-line-slider") {
+        $(".js-products-line-slider").each(function() {
+          $(this).slick("refresh");
+        });
+        $(".js-product-prev__slider").each(function() {
+          $(this).slick("refresh");
+        });
+      }
     });
   };
 

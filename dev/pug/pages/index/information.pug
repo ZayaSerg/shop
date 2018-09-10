@@ -1,0 +1,43 @@
+section.s-information.s-light-bg
+  .container
+    .information
+      .information-item
+        .information-item__header
+          h2.title-section Новости
+        .information-item__body
+          .news-prev__wrapper
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/img/content/news/news-1/prev.jpg')")
+              .news-prev__body
+                span.news-prev__title Выставка в Германии
+                span.news-prev__date 13 Июля 2018
+            a(href="").news-prev
+              .news-prev__img(style="background-image:url('static/img/content/news/news-2/prev.jpg')")
+              .news-prev__body
+                span.news-prev__title Новинки в нашем магазине
+                span.news-prev__date 10 Июля 2018
+        .information-item__footer
+          a(href="").information-item__link Все новости          
+      .information-item
+        .information-item__header
+          h2.title-section Отзывы
+        .information-item__body
+          .review-prev
+            p.review-prev__text Давно выяснено, что при оценке дизайна и композиции читаемый текст мешает сосредоточиться. Lorem Ipsum используют потому, что тот обеспечивает более или менее стандартное заполнение шаблона, а также реальное распределение букв и пробелов в абзацах, которое не получается при простой дубликации
+            span.review-prev__author Антон
+        .information-item__footer
+          a(href="").information-item__link Все отзывы
+      .information-item
+        .information-item__header
+          h2.title-section Бренды
+        .information-item__body
+          .brands__wrapper
+            ul.brands__list.brands__list--small
+              each brand in [{img:'brizon',name:'brizon'},{img:'borant',name:'borant'},{img:'curver',name:'curver'},{img:'giro',name:'GIRO'},{img:'haro',name:'HARO'},{img:'oxelo',name:'oxelo'}]
+                li.brands__item
+                  a(href="").brand
+                    img(src=`static/img/content/brands/${brand.img}.png`).brand__img
+                    span.brand__name=brand.name
+        .information-item__footer
+          a(href="").information-item__link Все бренды
+          span.information-item__count (9)

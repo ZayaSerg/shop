@@ -1,4 +1,6 @@
 .product-prev {
+  outline: none;
+  margin: 10px 15px 30px;
   padding: 20px;
   padding-top: 190px;
   position: relative;
@@ -17,6 +19,7 @@
   &__img {
     outline: none;
     max-width: 100%;
+    max-height: 160px;
   }
   &__info {
     display: flex;
