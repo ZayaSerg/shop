@@ -1,0 +1,68 @@
+mixin footerNavLink(link,text)
+  li.footer-nav__item
+    a(href=link).footer-nav__link=text
+
+footer.footer
+  .footer__main
+    .container
+      .footer__navigation
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','Самокаты')
+            +footerNavLink('','Беговелы')
+            +footerNavLink('','Велосипеды')
+            +footerNavLink('','Роликовые коньки')
+            +footerNavLink('','Скейты')
+            +footerNavLink('','Батуты')
+            +footerNavLink('','Детский спорт и отдых')
+            +footerNavLink('','Аксесуары и запчасти')
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','О компании')
+            +footerNavLink('','Доставка')
+            +footerNavLink('','Оплата')
+            +footerNavLink('','Поставщикам')
+            +footerNavLink('','Новости')
+            +footerNavLink('','Отзывы')
+        .footer__item
+          ul.footer-nav
+            +footerNavLink('','Контакты')        
+            +footerNavLink('','Вопросы и ответы')   
+            +footerNavLink('','Карта сайта')
+          span.footer__address Киев, бульвар Шевченка, д.13, офис 312
+      .footer__contacts
+        .footer__phones
+          a(href="tel:88003035555").footer__phone 8 (800) 303-55-55 
+          span.footer__text Звонок бесплатный
+          span.footer__text +38 (067) 456-56-56
+        a(href="maito:sale@zayaserg.com").footer__mail sale@zayaserg.com
+  .footer__socials
+    .container
+      ul.socials
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/img/general/socials/instagram.png" alt="Иконка Instagram").socials__icon
+            span.socials__name Instagram
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/img/general/socials/facebook.png" alt="Иконка Facebook").socials__icon
+            span.socials__name Facebook
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/img/general/socials/twitter.png" alt="Иконка Twitter").socials__icon
+            span.socials__name Twitter
+        li.socials__item
+          a(href="").socials__link
+            img(src="static/img/general/socials/viber.png" alt="Иконка Viber").socials__icon
+            span.socials__name Viber
+        //- li.socials__item
+        //-   a(href="").socials__link
+        //-     img(src="static/img/general/socials/skype.svg" alt="Иконка Skype").socials__icon
+        //-     span.socials__name Skype
+      .youtube
+        img(src="static/img/general/socials/youtube.png" alt="Иконка Youtube").socials__icon
+        a(href="").btn.btn--small.btn--transparent-grey.btn--inline Оставить отзыв 
+  .footer__bottom
+    .container
+      span.copyrigth @2010-2018 "zayaserg". Все права защищеныю Информация сайта защищена законом об авторских правах.
+      a(href="").footer__personal-data Политика обработки персональных данных

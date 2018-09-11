@@ -2,14 +2,20 @@
   background-color: $white;
   height: 40px;
   border: 1px solid $blaze-orange;
-  border-radius: 2px;
+  border-radius: 4px;
   line-height: 38px;
   color: $blaze-orange;
   font-weight: 600;
   padding: 0 20px;
   display: block;
+  cursor: pointer;
+  width: 100%;
   text-align: center;
   transition: all linear 0.3s;
+  &:hover {
+    background-color: $blaze-orange;
+    color: $white;
+  }
   &.btn {
     &--transparent {
       &-white {
@@ -21,12 +27,27 @@
           color: $tundora;
         }
       }
+      &-grey {
+        border-color: rgba(38, 38, 38, 0.15);
+        background-color: transparent;
+        color: $oslo-gray;
+        &:hover {
+          background-color: rgba(38, 38, 38, 0.15);
+          color: $white;
+        }
+      }
     }
     &--round {
       border-radius: 20px;
     }
     &--inline {
       display: inline-block;
+      width: auto;
+    }
+    &--small {
+      height: 30px;
+      line-height: 28px;
+      padding: 0 15px;
     }
   }
 }

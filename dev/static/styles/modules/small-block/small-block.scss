@@ -49,6 +49,7 @@
 
 .about {
   display: flex;
+  min-height: 250px;
   & > * {
     margin-right: 30px;
     &:last-child {
