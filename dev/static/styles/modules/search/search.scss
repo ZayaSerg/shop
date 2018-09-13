@@ -20,6 +20,10 @@
     top: -35px;
     display: none;
     width: 550px;
+    @media screen and (max-width: $tablet-size) {
+      display: block;
+      position: static;
+    }
   }
   &__form {
     display: flex;

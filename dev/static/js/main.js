@@ -22,10 +22,10 @@ $(document).ready(function() {
       prevArrow: ".banner__navigation--prev",
       nextArrow: ".banner__navigation--next",
       dots: true,
+      appendDots: ".banner__dots",
       customPaging: function(slider, i) {
-        return '<a class="banner__dot"></a>';
-      },
-      appendDots: ".banner__dots"
+        return '<div class="banner__dot"></div>';
+      }
     });
   };
 
@@ -90,9 +90,9 @@ $(document).ready(function() {
         customPaging: function(slider, i) {
           let color = $(slider.$slides[i]).data("color");
           return (
-            '<a class="product-prev__color" style="background-color:' +
+            '<div class="product-prev__color" style="background-color:' +
             color +
-            '"></a>'
+            '"></div>'
           );
         }
       });
@@ -102,7 +102,47 @@ $(document).ready(function() {
   let productLineSlider = function() {
     $(".js-products-line-slider").slick({
       slidesToShow: 4,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1139,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            appendDots: ".products-line-slider__dots",
+            prevArrow: ".products-line-slider__btn--prev",
+            nextArrow: ".products-line-slider__btn--next",
+            customPaging: function(slider, i) {
+              return '<div class="products-line-slider__dot"></div>';
+            }
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+  };
+
+  var sandwich = function() {
+    $(document).on("click", "sandwich", function() {
+      $(this).toggleClass("sandwich--active");
     });
   };
 

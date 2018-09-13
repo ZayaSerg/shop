@@ -1,7 +1,13 @@
+@import "mobile";
+
 .header {
   border-bottom: 1px solid $athens-gray;
+  @media screen and (max-width: $tablet-size) {
+    border-bottom: 0;
+  }
   &-content {
     display: flex;
+    width: 100%;
     align-items: center;
   }
   &__nav {
@@ -14,14 +20,29 @@
   &__top {
     background-color: $athens-gray;
     padding: 10px 0;
+    @media screen and (max-width: $tablet-size) {
+      display: none;
+    }
   }
   &__main {
     // my font
-    background-color: #cee3ed;
+    // background-color: #cee3ed;
     padding: 25px 0;
   }
   &__logo {
     margin-right: 40px;
+  }
+  &__item {
+    @media screen and (max-width: $tablet-size) {
+      display: none;
+    }
+    &.header__item {
+      &--mobile {
+        @media screen and (max-width: $tablet-size) {
+          display: block;
+        }
+      }
+    }
   }
   &__phones {
     display: flex;
@@ -57,6 +78,9 @@
     display: flex;
     flex: 0 0 190px;
     width: 190px;
+    @media screen and (max-width: $tablet-size) {
+      display: none;
+    }
     &__icon {
       flex: 0 0 15px;
       fill: $silver-chalice;
@@ -128,6 +152,9 @@
   }
   &__menu {
     // background-color: $athens-gray;
+    @media screen and (max-width: $tablet-size) {
+      display: none;
+    }
   }
   &__search {
     margin-left: auto;

@@ -70,7 +70,7 @@
     }
   }
   &__dot {
-    @include size(8px);
+    @include size(10px);
     border-radius: 50%;
     background-color: rgba(38, 38, 38, 0.3);
     display: block;

@@ -1,0 +1,43 @@
+.products-line-slider {
+  &__navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__btn {
+    @include size(40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $alto;
+    border-radius: 2px;
+  }
+  &__icon {
+    @include size(15px);
+    fill: $blaze-orange;
+  }
+  &__dot {
+    @include size(10px);
+    border-radius: 50%;
+    background-color: $alto;
+    display: block;
+    cursor: pointer;
+  }
+  &__dots {
+    .slick-dots {
+      display: flex;
+      align-items: center;
+      li {
+        margin-right: 10px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.slick-active {
+          .products-line-slider__dot {
+            background-color: $blaze-orange;
+          }
+        }
+      }
+    }
+  }
+}
