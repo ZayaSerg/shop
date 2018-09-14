@@ -54,7 +54,7 @@ $(document).ready(function() {
       }
     });
   };
-  //
+
   // let tabs = function() {
   //   $(".tabs-navigation__item").click(function() {
   //     let tabName = $(this).attr("show-tab");
@@ -79,14 +79,16 @@ $(document).ready(function() {
 
   let productPrevSlider = function() {
     $(".js-product-prev__slider").each(function(idx) {
-      let carouselId = "carousel" + idx;
-      this.closest(".product-prev").id = carouselId;
+      let productPrevSliderClass = "product-prev-slider-" + idx;
+      this.closest(".product-prev").classList.add(productPrevSliderClass);
       $(this).slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         dots: true,
         arrows: false,
-        appendDots: "#" + carouselId + " .product-prev__colors",
+        appendDots: "." + productPrevSliderClass + " .product-prev__colors",
+        swipe: false,
+        infinite: false,
         customPaging: function(slider, i) {
           let color = $(slider.$slides[i]).data("color");
           return (
@@ -99,46 +101,80 @@ $(document).ready(function() {
     });
   };
 
+  // let productPrevSlider = function() {
+  //   $(".js-product-prev__slider").each(function(idx) {
+  //     let carouselId = "carousel" + idx;
+  //     this.closest(".product-prev").id = carouselId;
+  //     $(this).slick({
+  //       slidesToShow: 1,
+  //       slidesToScroll: 1,
+  //       dots: true,
+  //       arrows: false,
+  //       appendDots: "#" + carouselId + " .product-prev__colors",
+  //       customPaging: function(slider, i) {
+  //         let color = $(slider.$slides[i]).data("color");
+  //         return (
+  //           '<div class="product-prev__color" style="background-color:' +
+  //           color +
+  //           '"></div>'
+  //         );
+  //       }
+  //     });
+  //   });
+  // };
+
   let productLineSlider = function() {
-    $(".js-products-line-slider").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      responsive: [
-        {
-          breakpoint: 1139,
-          settings: {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true,
-            appendDots: ".products-line-slider__dots",
-            prevArrow: ".products-line-slider__btn--prev",
-            nextArrow: ".products-line-slider__btn--next",
-            customPaging: function(slider, i) {
-              return '<div class="products-line-slider__dot"></div>';
+    $(".js-products-line-slider").each(function(idx) {
+      let productsLineSliderID = "products-line-slider-" + idx;
+      this.closest(".products-line-slider").id = productsLineSliderID;
+      $(this).slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: true,
+        appendDots: "#" + productsLineSliderID + " .products-line-slider__dots",
+        prevArrow:
+          "#" + productsLineSliderID + " .products-line-slider__btn--prev",
+        nextArrow:
+          "#" + productsLineSliderID + " .products-line-slider__btn--next",
+        responsive: [
+          {
+            breakpoint: 1139,
+            settings: {
+              slidesToShow: 3,
+              customPaging: function(slider, i) {
+                return '<div class="products-line-slider__dot"></div>';
+              }
             }
           }
-        },
-        {
-          breakpoint: 600,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
-      ]
+        ]
+      });
     });
   };
+
+  // let productLineSlider = function() {
+  //   $(".js-products-line-slider").slick({
+  //     slidesToShow: 4,
+  //     slidesToScroll: 1,
+  //     responsive: [
+  //       {
+  //         breakpoint: 1139,
+  //         settings: {
+  //           slidesToShow: 3,
+  //           slidesToScroll: 1,
+  //           infinite: true,
+  //           dots: true,
+  //           appendDots: ".products-line-slider__dots",
+  //           prevArrow: ".products-line-slider__btn--prev",
+  //           nextArrow: ".products-line-slider__btn--next",
+  //           customPaging: function(slider, i) {
+  //             return '<div class="products-line-slider__dot"></div>';
+  //           }
+  //         }
+  //       }
+  //     ]
+  //   });
+  // };
 
   var sandwich = function() {
     $(document).on("click", "sandwich", function() {
