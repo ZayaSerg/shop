@@ -12,6 +12,9 @@
     & > * {
       &:nth-child(3n + 3) {
         margin-right: 0;
+        @media screen and (max-width: $tablet-size) {
+          margin-right: 10px;
+        }
       }
     }
   }
