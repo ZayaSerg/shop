@@ -14,54 +14,40 @@
         &__link {
           border-bottom-color: $blaze-orange;
         }
-        &-dropdown {
-          display: flex;
-          // z-index: 5;
+        &__dropdown-wrapper {
+          display: block;
         }
       }
     }
   }
   &__link {
     border-bottom: 2px solid transparent;
+    align-items: center;
     color: $tundora;
-    display: block;
+    display: flex;
     padding: 15px 0;
     font-size: 16px;
     font-weight: 600;
     line-height: 1.88;
   }
-  &-dropdown {
-    // Why its dont workig
-    z-index: 5;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    display: none;
+  &__dropdown {
     background-color: $white;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.05);
+    display: inline-block;
+    left: 0;
     padding-top: 10px;
-    &__list {
-      width: 300px;
+    &-wrapper {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      z-index: 5;
     }
-    &__link {
-      color: $mine-shaft;
-      display: flex;
-      align-items: center;
-      line-height: 20px;
-      padding: 10px;
-      &:hover {
-        background-color: $athens-gray;
-        color: $blaze-orange;
-        .main-nav-dropdown__icon {
-          fill: $blaze-orange;
-        }
-      }
-    }
-    &__icon {
-      width: 8px;
-      height: 12px;
-      margin-left: auto;
-      fill: $silver;
-    }
+  }
+  &__icon {
+    @include size(12px);
+    fill: $tundora;
+    margin-left: 10px;
   }
 }

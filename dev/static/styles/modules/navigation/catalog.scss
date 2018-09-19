@@ -1,0 +1,63 @@
+.catalog-nav {
+  // Why its dont workig
+  // z-index: 5;
+  // position: absolute;
+  // left: 0;
+  // top: 100%;
+  // display: none;
+  // background-color: $white;
+  // box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+  // padding-top: 10px;
+  &__list {
+    background-color: $white;
+    // width: 300px;
+    position: relative;
+    .catalog-nav__list {
+      position: absolute;
+      left: 360px;
+      top: 0;
+      display: none;
+    }
+  }
+  &__item {
+    width: 360px;
+    @media screen and (max-width: $tablet-size) {
+      width: auto;
+    }
+    &:hover {
+      & > .catalog-nav__link {
+        background-color: $athens-gray;
+        color: $blaze-orange;
+      }
+      .catalog-nav__icon {
+        fill: $blaze-orange;
+      }
+      .catalog-nav__list {
+        display: block;
+      }
+    }
+  }
+  &__link {
+    color: $mine-shaft;
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    padding: 10px 15px;
+    // &:hover {
+    //   background-color: $athens-gray;
+    //   color: $blaze-orange;
+    //   .main-nav-dropdown__icon {
+    //     fill: $blaze-orange;
+    //   }
+    // }
+  }
+  &__icon {
+    @include size(12px);
+    fill: $silver;
+    margin-left: auto;
+    // width: 8px;
+    // height: 12px;
+    // margin-left: auto;
+    // fill: $silver;
+  }
+}
