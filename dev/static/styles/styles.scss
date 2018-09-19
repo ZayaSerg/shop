@@ -86,6 +86,7 @@ button {
 }
 
 .container {
+  position: relative;
   margin: 0 auto;
   max-width: $content-size;
   padding: 0 15px;

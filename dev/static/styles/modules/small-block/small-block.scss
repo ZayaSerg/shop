@@ -5,7 +5,7 @@
 }
 
 .advantages {
-  background-color: $parcelain;
+  background-color: $porcelain;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -50,7 +50,7 @@
 }
 
 .s-light-bg {
-  background-color: $parcelain;
+  background-color: $porcelain;
 }
 
 .text {
@@ -122,21 +122,6 @@
   width: 20px;
   height: 16px;
   cursor: pointer;
-  &--active {
-    .sandwich__line {
-      &--top {
-        top: 7px;
-        transform: rotate(45deg);
-      }
-      &--middle {
-        opacity: 0;
-      }
-      &--bottom {
-        top: 7px;
-        transform: rotate(-45deg);
-      }
-    }
-  }
   &__line {
     position: absolute;
     left: 0;
