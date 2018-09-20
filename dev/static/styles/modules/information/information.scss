@@ -8,6 +8,9 @@
   @media screen and (max-width: $tablet-size) {
     flex-wrap: wrap;
   }
+  @media screen and (max-width: $phone-size) {
+    flex-direction: column;
+  }
   & > * {
     flex: 1;
     padding-right: 30px;
@@ -15,11 +18,18 @@
       flex: 0 0 50%;
       width: 50%;
     }
+    @media screen and (max-width: $phone-size) {
+      flex: 1;
+      width: 100%;
+    }
     &:last-child {
       padding-right: 0;
     }
   }
   &-item {
+    @media screen and (max-width: $phone-size) {
+      padding: 0;
+    }
     &__link {
       display: inline-block;
       border-bottom: 1px solid rgba(38, 38, 38, 0.15);
@@ -30,6 +40,10 @@
     }
     &__body {
       height: 250px;
+      @media screen and (max-width: $phone-size) {
+        height: auto;
+        margin-bottom: 20px;
+      }
     }
     &__footer {
       display: flex;
@@ -50,6 +64,10 @@
         &__body {
           @media screen and (max-width: $tablet-size) {
             height: 150px;
+          }
+          @media screen and (max-width: $phone-size) {
+            height: auto;
+            margin-bottom: 20px;
           }
         }
       }

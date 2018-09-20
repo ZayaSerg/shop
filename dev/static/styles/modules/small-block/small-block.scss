@@ -1,6 +1,18 @@
 .logo {
   &__img {
     height: 40px;
+    @media screen and (max-width: $phone-size) {
+      height: 30px;
+    }
+  }
+}
+
+.mobile {
+  &-logo {
+    display: none;
+    @media screen and (max-width: $phone-size) {
+      display: block;
+    }
   }
 }
 
@@ -11,23 +23,43 @@
   justify-content: space-around;
   border-radius: 4px;
   padding: 20px;
+  // @media screen and (max-width: $tablet-size) {
+  //   justify-content: space-between;
+  //   padding: 20px 40px;
+  // }
+  @media screen and (max-width: $phone-size) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    // padding: 20px;
+  }
 }
 
 .advantage {
   display: flex;
   align-items: center;
-  // margin-right: 180px;
-  // &:last-child {
-  //   margin-right: 0;
-  // }
   @media screen and (max-width: $tablet-size) {
     flex-direction: column;
+  }
+  @media screen and (max-width: $phone-size) {
+    flex-direction: row;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  &:last-child {
+    margin-right: 0;
+    @media screen and (max-width: $phone-size) {
+      margin-bottom: 0;
+    }
   }
   &__body {
     display: flex;
     flex-direction: column;
     @media screen and (max-width: $tablet-size) {
       text-align: center;
+    }
+    @media screen and (max-width: $phone-size) {
+      text-align: left;
     }
   }
   &__title {
@@ -46,6 +78,10 @@
       margin-right: 0;
       margin-bottom: 10px;
     }
+    @media screen and (max-width: $phone-size) {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -60,7 +96,6 @@
 .about {
   display: flex;
   @media screen and (max-width: $tablet-size) {
-    // flex-direction: column-reverse;
     flex-direction: column;
   }
   min-height: 250px;
@@ -96,6 +131,9 @@
       flex: 1;
       width: 100%;
       margin-bottom: 30px;
+    }
+    @media screen and (max-width: $phone-size) {
+      overflow: auto;
     }
     &__item {
       height: 50px;

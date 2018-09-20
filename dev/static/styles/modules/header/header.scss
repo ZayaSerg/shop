@@ -28,6 +28,9 @@
     // my font
     // background-color: #cee3ed;
     padding: 25px 0;
+    @media screen and (max-width: $phone-size) {
+      display: none;
+    }
   }
   &__logo {
     margin-right: 40px;
@@ -151,7 +154,6 @@
     }
   }
   &__menu {
-    // background-color: $athens-gray;
     @media screen and (max-width: $tablet-size) {
       display: none;
     }

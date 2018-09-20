@@ -47,7 +47,15 @@ $(document).ready(function() {
       appendDots: ".banner__dots",
       customPaging: function(slider, i) {
         return '<div class="banner__dot"></div>';
-      }
+      },
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false
+          }
+        }
+      ]
     });
   };
 
@@ -159,14 +167,26 @@ $(document).ready(function() {
           "#" + productsLineSliderID + " .products-line-slider__btn--prev",
         nextArrow:
           "#" + productsLineSliderID + " .products-line-slider__btn--next",
+        customPaging: function(slider, i) {
+          return '<div class="products-line-slider__dot"></div>';
+        },
         responsive: [
           {
             breakpoint: 1139,
             settings: {
-              slidesToShow: 3,
-              customPaging: function(slider, i) {
-                return '<div class="products-line-slider__dot"></div>';
-              }
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2
+            }
+          },
+          {
+            breakpoint: 550,
+            settings: {
+              slidesToShow: 1
             }
           }
         ]
@@ -199,7 +219,7 @@ $(document).ready(function() {
   // };
 
   let mobileMenu = () => {
-    $(document).on("click", ".mobile-menu__toogle", function() {
+    $(document).on("click", ".mobile-menu__toggle", function() {
       $(this)
         .parent()
         .addClass("mobile-menu--open");

@@ -9,6 +9,11 @@
     }
   }
   &.brands__list--small {
+    @media screen and (max-width: $tablet-size) {
+      flex-wrap: nowrap;
+      overflow: auto;
+      margin-right: -15px;
+    }
     & > * {
       &:nth-child(3n + 3) {
         margin-right: 0;

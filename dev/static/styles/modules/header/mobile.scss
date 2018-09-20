@@ -1,18 +1,29 @@
-.header {
-  &__mobile {
-    position: relative;
-    display: none;
-    @media screen and (max-width: $tablet-size) {
-      display: block;
+.header__mobile {
+  position: relative;
+  display: none;
+  @media screen and (max-width: $tablet-size) {
+    display: block;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $phone-size) {
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0;
     }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      & > * {
-        // width: 350px;
-        flex: 0 0 49%;
-        width: 49%;
+    & > * {
+      flex: 0 0 49%;
+      width: 49%;
+      @media screen and (max-width: $phone-size) {
+        flex: 0 0 auto;
+        width: auto;
       }
+    }
+  }
+  .search {
+    @media screen and (max-width: $phone-size) {
+      display: none;
     }
   }
 }
